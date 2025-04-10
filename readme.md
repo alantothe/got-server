@@ -1,3 +1,7 @@
+# Game of Thrones - Drizzle Server
+
+A simple drizzle - postgres game of thrones api
+
 ## 1. Create a PostgreSQL Database
 
 Open Postgres CLI
