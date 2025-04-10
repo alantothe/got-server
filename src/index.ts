@@ -1,30 +1,11 @@
-
-async function main() {
-  // const newCharacter: typeof characterTable.$inferInsert = {
-  //   firstName: 'Jon',
-  //   lastName: 'Snow',
-  //   house: 'Stark'
-  // };
-
-//   await db.insert(characterTable).values(newCharacter);
-//   console.log('New user created!')
-
-//   const character = await db.select().from(characterTable);
-//   console.log('Getting all users from the database: ', character)
+import { serve } from '@hono/node-server'
+import { Hono } from 'hono'
 
 
-//   await db
-//     .update(characterTable)
-//     .set({
-//       house: 'Targaryen',
-//     })
-//     .where(eq(characterTable.house, newCharacter.house));
-//   console.log('Character info updated!')
+const app = new Hono()
+app.get('/', (c) => c.text('Hello Node.js!'))
 
-//   // await db.delete(usersTable).where(eq(usersTable.email, user.email));
-  //   // console.log('User deleted!')
-  
-
-}
-
-main();
+serve({
+  fetch: app.fetch,
+  port: 8787,
+})
